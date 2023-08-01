@@ -15,9 +15,9 @@ Esta API es una aplicación web basada en Flask que proporciona reconocimiento d
 ### Uso
 1. Ejecute el servidor de API en entorno local: python main.py
 2. Realice solicitudes POST a `http://127.0.0.1:5000/ner_es` con payload JSON que contenga el campo `oraciones`. El servidor responderá con las entidades detectadas.
-3. Cabe mencionar que la API también esta en un servidor remoto CentOS7 con gunicorn en http://prolab.duckdns.org:8009/ner_es.
+3. Cabe mencionar que la API también esta en un servidor remoto CentOS7 con gunicorn en `http://prolab.duckdns.org:8009/ner_es`.
 
-Solicitud de ejemplo:
+4. Solicitud de ejemplo:
 {
   "oraciones": [
     "Apple está buscando comprar una startup del Reino Unido por mil millones de dólares.",
@@ -28,6 +28,8 @@ Solicitud de ejemplo:
 Ejemplo de respuesta::
 {'resultado': [{'entidades': {'Apple': 'ORG', 'Reino Unido': 'LOC'}, 'oración': 'Apple está buscando comprar una startup del Reino Unido por mil millones de dólares.'}, {'entidades': {'San Francisco': 'LOC'}, 'oración': 'San Francisco considera prohibir los robots de entrega en la acera.'}]}
 
+4. Puede ejecutar el arcivo request.py para ver la respuesta de la api, hay 2 opciones en la variable url, si está corriendo Flask en localhost entonces habilita la url con localhost. Si no está ejecutando Flask entonces puede correr el archivo con la url remota habilitada.
+   
 Endpoints de la API
 Reconocimiento de entidad nombrada (NER)
 URL: /ner_es
